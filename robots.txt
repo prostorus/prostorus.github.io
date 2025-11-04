@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://prostorus.github.io/
+Sitemap: https://prostorus.github.io/sitemap.xml
