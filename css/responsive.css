@@ -1,0 +1,200 @@
+/* Медиа-запросы для адаптивности */
+
+/* Планшеты и маленькие ноутбуки */
+@media (max-width: 1024px) {
+    .main-title {
+        font-size: 2.8rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .upcoming-card-image {
+        flex: 0 0 250px;
+    }
+}
+
+/* Планшеты */
+@media (max-width: 768px) {
+    .header {
+        padding: 60px 0;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .tagline {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .upcoming-card {
+        flex-direction: column;
+    }
+    
+    .upcoming-card-image {
+        height: 250px;
+        flex: none;
+    }
+    
+    .release-item-image {
+        height: 200px;
+        flex: none;
+    }
+    
+    .release-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .release-item-year {
+        align-self: flex-start;
+    }
+    
+    .modal-container {
+        margin: 20px auto;
+    }
+    
+    .bio-content,
+    .release-details {
+        flex-direction: column;
+    }
+    
+    .bio-image,
+    .release-cover {
+        flex: none;
+        margin-bottom: 20px;
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 576px) {
+    .header {
+        padding: 40px 0;
+    }
+    
+    .section {
+        padding: 40px 0;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .tagline {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .avatar-container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .upcoming-title {
+        font-size: 1.6rem;
+    }
+    
+    .upcoming-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .switcher-buttons {
+        flex-direction: column;
+    }
+    
+    .switcher-btn {
+        width: 100%;
+    }
+    
+    .contacts-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-buttons {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .filter-btn {
+        white-space: nowrap;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .modal-header {
+        padding: 20px;
+    }
+    
+    .bio-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .release-item-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .track-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .listen-btn {
+        align-self: flex-end;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 400px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .avatar-container {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .release-item-title {
+        font-size: 1.3rem;
+    }
+}

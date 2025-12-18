@@ -1,0 +1,358 @@
+:root {
+    --accent-red: #ff3b3b;
+    --accent-blue: #2AABEE;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    transition: background-color 0.8s ease;
+}
+
+/* Навигация */
+.swiper-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    touch-action: none;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 2;
+}
+
+.slide.prev {
+    transform: translateY(-100%) scale(0.9);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Типографика */
+h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    margin-bottom: 24px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.highlight {
+    color: var(--accent-red);
+    font-weight: 800;
+}
+
+/* Элементы интерфейса */
+.avatar-container {
+    position: relative;
+    margin-bottom: 30px;
+}
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid var(--accent-red);
+    box-shadow: 0 0 40px rgba(255, 59, 59, 0.3);
+    object-fit: cover;
+}
+
+.cover-art {
+    width: 260px;
+    height: 260px;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.8s ease 0.2s;
+}
+
+.slide.active .cover-art {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Кнопки */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s;
+}
+
+.btn-red { background: var(--accent-red); color: white; box-shadow: 0 10px 30px rgba(255,59,59,0.3); }
+.btn-blue { background: var(--accent-blue); color: white; box-shadow: 0 10px 30px rgba(42, 171, 238, 0.3); }
+.btn-transp { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); position: absolute; bottom: 40px; z-index: 10; font-size: 0.9rem;}
+
+.btn:active { transform: scale(0.96); }
+
+/* SVG Иконки (Большие для вопросов) */
+.icon-large {
+    width: 80px;
+    height: 80px;
+    margin-top: 20px;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+}
+
+/* Статистика */
+.stat-big {
+    margin-bottom: 40px;
+}
+.highlight-text {
+    display: block;
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(180deg, #fff, #999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.sub-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.05);
+    padding: 16px 20px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 320px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.spotify-card { border-left: 4px solid #1DB954; }
+.yandex-card { border-left: 4px solid #FFD700; }
+.vk-card { border-left: 4px solid #0077FF; }
+.stat-card .value { margin-left: auto; font-weight: 700; font-size: 1.1rem; }
+
+/* Планы */
+.plans-container { width: 100%; max-width: 320px; text-align: left; }
+.plan-item {
+    background: linear-gradient(90deg, rgba(255,255,255,0.05), transparent);
+    padding: 15px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.plan-item .icon { font-size: 1.4rem; }
+.plan-item .text { font-weight: 600; font-size: 1.1rem; }
+
+/* Анимации появления */
+.animate-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.slide.active .animate-up { opacity: 1; transform: translateY(0); }
+.slide.active .animate-up:nth-child(1) { transition-delay: 0.1s; }
+.slide.active .animate-up:nth-child(2) { transition-delay: 0.2s; }
+.slide.active .animate-up:nth-child(3) { transition-delay: 0.3s; }
+.slide.active .animate-up:nth-child(4) { transition-delay: 0.4s; }
+
+.swipe-hint {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.6;
+    animation: float 2s infinite ease-in-out;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* --- ЗВЕЗДНЫЕ ВОЙНЫ (ИСПРАВЛЕНО) --- */
+.effect-starwars {
+    perspective: 400px; /* Увеличили глубину */
+    overflow: hidden;
+}
+
+/* Простой вертикальный скролл титров */
+.star-wars-wrapper {
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.crawl {
+    position: absolute;
+    width: 85%;
+    top: 100%; /* Начинаем снизу экрана */
+    text-align: center;
+    transition: none;
+}
+
+.crawl.running {
+    /* Спокойная скорость: 40 секунд */
+    animation: simpleUpScroll 40s linear forwards;
+}
+
+.crawl-content h2 {
+    color: #ffe81f;
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.crawl-content p {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.crawl-content span {
+    color: #aaa;
+    font-size: 1rem;
+    display: block;
+    margin-top: 10px;
+}
+
+@keyframes simpleUpScroll {
+    0% { top: 100%; opacity: 0; }
+    5% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: -150%; opacity: 0; } /* Уходит за верхний край */
+}
+
+/* Класс для запуска анимации JS-ом */
+.crawl.running {
+    animation: crawlAnim 25s linear forwards;
+}
+
+.crawl-content h2 { color: #ffe81f; margin-bottom: 50px; font-size: 2rem; text-shadow: 0 0 10px #ffe81f;}
+.crawl-content p { color: #ffe81f; margin-bottom: 40px; font-size: 1.4rem; text-transform: uppercase;}
+.crawl-content span { font-size: 0.9rem; color: #fff; text-transform: none; display: block; margin-top: 5px; opacity: 0.8; }
+
+@keyframes crawlAnim {
+    0% { top: 100%; opacity: 1; transform: rotateX(25deg) translateZ(0); }
+    100% { top: -250%; opacity: 1; transform: rotateX(25deg) translateZ(-1500px); } /* Уходит далеко вверх и вглубь */
+}
+
+/* --- ФОН СО ЗВЕЗДАМИ (CSS) --- */
+.stars-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: black;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Создаем звезды через box-shadow (оптимизация) */
+.stars-1, .stars-2, .stars-3 {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: transparent;
+}
+
+.stars-1 { width: 1px; height: 1px; box-shadow: 10vw 20vh #fff, 50vw 10vh #fff, 80vw 50vh #fff, 20vw 80vh #fff, 60vw 90vh #fff; animation: twinkle 3s infinite alternate; }
+.stars-2 { width: 2px; height: 2px; box-shadow: 15vw 15vh #ccc, 55vw 25vh #ccc, 85vw 55vh #ccc; animation: twinkle 5s infinite alternate-reverse; }
+.stars-3 { width: 3px; height: 3px; box-shadow: 30vw 40vh #aaa, 70vw 60vh #aaa; animation: twinkle 7s infinite alternate; }
+
+/* Добавляем больше звезд через псевдоэлементы */
+.stars-1::after { content: " "; position: absolute; top: 200px; left: 50px; width: 1px; height: 1px; box-shadow: 20vw 30vh #fff, 40vw 70vh #fff, 90vw 10vh #fff; }
+
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* --- САЛЮТЫ CANVAS --- */
+#fireworksCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Под контентом последнего слайда, но над фоном */
+    pointer-events: none;
+    display: none; /* Скрыт пока не нужен */
+}
+
+.slide.effect-fireworks .end-content {
+    position: relative;
+    z-index: 10;
+}
