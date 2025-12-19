@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Allow: /results2025
 Sitemap: https://prostorus.github.io/sitemap.xml
