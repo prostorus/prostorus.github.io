@@ -2,6 +2,35 @@
 const releasesData = {
     "youtubeVideoId": "-BWPThUwuaQ", // ID видео на YouTube (замените на свое)
     "releases": [
+		{
+            "id": 18,
+            "title": "Ангельское лимбо",
+            "type": "ep",
+            "releaseType": "platform",
+            "year": 2026,
+            "tracks": 3,
+            "duration": "3 мин",
+            "cover": "https://avatars.yandex.net/get-music-content/20189877/a6fe8792.a.42688025-1/m1000x1000",
+            "description": "Ангельское лимбо — состояние души, застрявшей между небом и землёй. Это не рай, где всё прощено, и не ад, где всё окончательно. Это промежуток, где чистота намерений сталкивается с болью опыта, а любовь ощущается как болезненный холод. Этот холод достигает предела в треке «Счастливая безграмотность» — там мороз становится физическим, пробирает не снаружи, а изнутри.",
+            "shortDescription": "Ангельское лимбо — состояние души, застрявшей между небом и землёй. Это не рай, где всё прощено, и не ад, где всё окончательно.",
+            "tracksList": [
+                {
+                    "number": 1, 
+                    "title": "Мелодии души", 
+                    "listenUrl": "https://band.link/angelic_limbo"
+                },
+                {
+                    "number": 2, 
+                    "title": "Счастливая безграмотность", 
+                    "listenUrl": "https://band.link/angelic_limbo"
+                },
+                {
+                    "number": 3, 
+                    "title": "ЛЮБОВЬ КАК ПОСТИРОНИЯ (Cover) feat. Smo'la", 
+                    "listenUrl": "https://band.link/angelic_limbo"
+                }
+            ]
+        },
         {
             "id": 17,
             "title": "Code 47",
