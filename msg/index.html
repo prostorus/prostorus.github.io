@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lore Messenger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div id="view-chatlist" class="view active">
+            <header><div class="main-header"><h1>Все чаты</h1></div></header>
+            <div class="chat-list" id="chat-list-container"></div>
+        </div>
+
+        <div id="view-chatroom" class="view">
+            <header class="glass-header">
+                <button id="btn-back" class="icon-btn back-btn">‹</button>
+                <div class="chat-header-info" id="chat-header-info">
+                    <div class="avatar-container"><img src="" alt="avatar" id="header-avatar"><div class="status-dot"></div></div>
+                    <div class="header-text-info"><h2 id="header-name"></h2><p id="header-status" class="status-text">online</p></div>
+                </div>
+            </header>
+            <div class="messages-container" id="messages-container"></div>
+            <div class="choices-panel" id="choices-panel"></div>
+            <div class="input-area glass-input">
+                <input type="text" id="message-input" readonly placeholder="Сообщение...">
+                <button id="btn-send" class="send-btn" disabled><svg viewBox="0 0 24 24"><path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg></button>
+            </div>
+        </div>
+
+        <div id="view-profile" class="view">
+            <header class="profile-header"><button id="btn-back-profile" class="icon-btn back-btn">‹ Назад</button></header>
+            <div class="profile-content">
+                <div class="avatar-holder"><img src="" alt="avatar" id="profile-avatar" class="profile-large-avatar"></div>
+                <h2 id="profile-name"></h2><p id="profile-tag"></p>
+            </div>
+        </div>
+    <div id="media-viewer" class="media-viewer">
+		<span class="close-viewer" onclick="
+			this.parentElement.style.display='none'; 
+			document.getElementById('viewer-video').pause();
+		">&times;</span>
+		<img id="viewer-img" src="" style="display:none;">
+		<video id="viewer-video" controls style="display:none;"></video>
+	</div>
+    <script src="bd.js"></script>
+    <script src="stories.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
