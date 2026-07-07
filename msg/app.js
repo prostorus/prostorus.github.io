@@ -293,7 +293,16 @@ btnSend.onclick = () => {
 
 function renderChoices() {
     choicesPanel.innerHTML = '';
-    const step = storyScript[chatProgress[currentChatId]];
+    
+    // Проверяем, выбран ли чат и есть ли он в объекте прогресса
+    if (currentChatId === null || !chatProgress || !chatProgress[currentChatId]) {
+        console.warn("Предупреждение: Нет сохраненного прогресса для чата ID:", currentChatId);
+        return; 
+    }
+
+    const currentStepId = chatProgress[currentChatId];
+    const step = storyScript[currentStepId];
+    
     if (step && step.choices) {
         step.choices.forEach(c => {
             const b = document.createElement('button');

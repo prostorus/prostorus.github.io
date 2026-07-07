@@ -1,7 +1,8 @@
 // stories.js
 // Текущий прогресс по каждому чату
 let chatProgress = {
-    1: "back" // Чат ID 1 находится на шаге "step_1"
+    1: "back", // Чат ID 1 находится на шаге "step_1"
+	2: "max_start"
 };
 
 const storyScript = {
@@ -41,6 +42,20 @@ const storyScript = {
         delay: 2000,
         choices: [
             { text: "назад", nextStep: "back" }
+        ]
+    },
+	// === СЮЖЕТ ДЛЯ ЧАТА №2 (Новый Герой) ===
+    // Ключи шагов должны быть уникальными, чтобы они не пересекались с первым чатом!
+    "max_start": {
+        choices: [
+            { text: "Я тебе не верю. Докажи!", nextStep: "hero_task_info" },
+        ]
+    },
+    "hero_task_info": {
+        // Бот пришлет спойлер с секретным текстом
+        reply: { type: "circle", content: "assets/ganin.mp4" },
+        delay: 1200,
+        choices: [
         ]
     }
 	
