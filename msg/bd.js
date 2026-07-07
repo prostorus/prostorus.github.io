@@ -3,7 +3,7 @@ const bd = {
     // Пользователи для профилей
 	users: {
         1: { id: 1, name: "Просто Рус", tag: "@prosorus", avatar: "assets/profiles/prostorus.jpg" }, // Запятая здесь обязательна!
-        2: { id: 2, name: "Макс Ганин", tag: "@ganin_don", avatar: "assets/avatar2.jpg" },
+        2: { id: 2, name: "Макс Ганин", tag: "@ganin_don", avatar: "assets/profiles/ganin.jpg" },
 		3: { id: 3, name: "Новый Герой", tag: "@new_hero", avatar: "assets/avatar2.jpg" }
     },
     
